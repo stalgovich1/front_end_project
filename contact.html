@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стилі для горизонтального розміщення елементів */
+        .horizontal {
+            display: flex;
+            justify-content: center; /* Центруємо елементи горизонтально */
+            align-items: center;
+            background-color: #65b9fdb4; 
+            padding: 30px; /* відступи всередині панелі */
+        }
+        .horizontal ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .horizontal li {
+            margin-right: 50px; /* відступ між кнопками навігації */
+        }
+        .horizontal li:last-child {
+            margin-right: 0;
+        }
+
+        /* Збільшуємо розмір кнопок навігації */
+        .horizontal a {
+            font-size: 22px;
+            text-decoration: none;
+            color: hsl(0, 0%, 100%); /* колір тексту кнопок */
+        }
+
+        /* Основне фото з відступами справа і зліва */
+        header img {
+            width: 100%; /* масштаб фото менший */
+            max-width: 100%;
+            margin-left: 0%; /* відступ зліва */
+            margin-right: 0%; /* відступ справа */
+            margin-top: 0px; /* відступ зверху */
+            margin-bottom: 20px; /* відступ знизу */
+        }
+
+        /* Стилі для контактної інформації */
+        .contact-info {
+            text-align: center;
+            font-size: 18px;
+            padding: 10px 0;
+            background-color: #dba3f5;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Контактна інформація -->
+        <div class="contact-info">
+            <p>Телефони для довідок: +380 (XX) XXX-XX-XX, +380 (XX) XXX-XX-XX</p>
+        </div>
+        <!-- Фото з відступами справа і зліва -->
+        <img src="1.jpg" alt="Фото">
+        <!-- Навігація -->
+        <nav class="horizontal">
+            <ul>
+                <li><a href="home.html">Головна</a></li>
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="prices.html">Ціни</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="reviews.html">Відгуки</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="contact-info">
+            <h2>Наші контакти</h2>
+            <p><strong>Адреса:</strong> м. Київ, вул. Печенізька, 32</p>
+            <p><strong>Телефон:</strong> +380 123 456 789</p>
+            <p><strong>Email:</strong> tvkservice1@gmail.com</p>
+            <p><strong>Години роботи:</strong></p>
+            <ul>
+                <li>Понеділок - П'ятниця: 9:00 - 18:00</li>
+                <li>Субота: 10:00 - 16:00</li>
+                <li>Неділя: вихідний</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; TVK service</p>
+    </footer>
+</body>
+</html>

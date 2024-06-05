@@ -1,0 +1,71 @@
+/* Стилі для горизонтального розміщення елементів */
+.horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.horizontal ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.horizontal li {
+    margin-right: 40px;
+}
+
+.horizontal li:last-child {
+    margin-right: 0;
+}
+
+/* Анімація для тексту навігації */
+nav.horizontal a {
+    color: #ffffff; /* початковий колір */
+    transition: color 0.5s ease; /* зміна кольору буде плавною протягом 0.3 секунди */
+}
+
+nav.horizontal a:hover {
+    color:  #4bcab9; /* колір при наведенні курсора */
+}
+#callback-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #callback-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #callback-form {
+    margin-top: 10px;
+  }
+  
+  #phone-number {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,30 @@
+/* Стилі для горизонтального розміщення елементів */
+.horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.horizontal ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.horizontal li {
+    margin-right: 20px;
+}
+
+.horizontal li:last-child {
+    margin-right: 0;
+}
+
+/* Анімація для тексту навігації */
+nav.horizontal a {
+    color: #58e0d5; /* початковий колір */
+    transition: color 0.3s ease; /* зміна кольору буде плавною протягом 0.3 секунди */
+}
+
+nav.horizontal a:hover {
+    color: #4bcab9; /* колір при наведенні курсора */
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Послуги</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стилі для горизонтального розміщення елементів */
+        .horizontal {
+            display: flex;
+            justify-content: center; /* Центруємо елементи горизонтально */
+            align-items: center;
+            background-color: #65b9fdb4; 
+            padding: 30px; /* відступи всередині панелі */
+        }
+        .horizontal ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .horizontal li {
+            margin-right: 50px; /* відступ між кнопками навігації */
+        }
+        .horizontal li:last-child {
+            margin-right: 0;
+        }
+
+        /* Збільшуємо розмір кнопок навігації */
+        .horizontal a {
+            font-size: 22px;
+            text-decoration: none;
+            color: hsl(0, 0%, 100%); /* колір тексту кнопок */
+        }
+
+        /* Основне фото з відступами справа і зліва */
+        header img {
+            width: 100%; /* масштаб фото менший */
+            max-width: 100%;
+            margin-left: 0%; /* відступ зліва */
+            margin-right: 0%; /* відступ справа */
+            margin-top: 0px; /* відступ зверху */
+            margin-bottom: 20px; /* відступ знизу */
+        }
+
+        /* Стилі для контактної інформації */
+        .contact-info {
+            text-align: center;
+            font-size: 18px;
+            padding: 10px 0;
+            background-color: #dba3f5;
+            color: #dba3f5;
+        }
+
+        /* Стиль для списку послуг */
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+        }
+        .services-list li {
+            margin-bottom: 20px; /* Відступ між елементами списку */
+        }
+        .services-list li span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Контактна інформація -->
+        <div class="contact-info">
+            <p>Телефони для довідок: +380 (XX) XXX-XX-XX, +380 (XX) XXX-XX-XX</p>
+        </div>
+        <!-- Фото з відступами справа і зліва -->
+        <img src="1.jpg" alt="Фото">
+        <!-- Навігація -->
+        <nav class="horizontal">
+            <ul>
+                <li><a href="home.html">Головна</a></li>
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="prices.html">Ціни</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="reviews.html">Відгуки</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Вміст сторінки "Послуги" -->
+        <section>
+            <h2>Наші послуги</h2>
+            <ul class="services-list">
+                <li><span>Ремонт техніки:</span> Повний ремонт УЗД</li>
+                <li><span>Обслуговування:</span> Регулярне технічне обслуговування вашої техніки</li>
+                <li><span>Діагностика:</span> Комплексна діагностика для виявлення несправностей</li>
+                <li><span>Консультування:</span> Професійні консультації з питань технічного обслуговування та ремонту</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; TVK service</p>
+    </footer>
+</body>
+</html>

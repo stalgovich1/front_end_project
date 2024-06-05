@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стилі для горизонтального розміщення елементів */
+        .horizontal {
+            display: flex;
+            justify-content: center; /* Центруємо елементи горизонтально */
+            align-items: center;
+            background-color: #65b9fdb4;
+            padding: 30px; /* Відступи всередині панелі */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .horizontal ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .horizontal li {
+            margin-right: 50px; /* Відступ між кнопками навігації */
+        }
+        .horizontal li:last-child {
+            margin-right: 0;
+        }
+
+        /* Збільшуємо розмір кнопок навігації */
+        .horizontal a {
+            font-size: 22px;
+            text-decoration: none;
+            color: hsl(0, 0%, 100%); /* Колір тексту кнопок */
+            transition: color 0.3s;
+        }
+        .horizontal a:hover {
+            color: #ffeb3b; /* Колір тексту кнопок при наведенні */
+        }
+
+        /* Основне фото з відступами справа і зліва */
+        header img {
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 5px solid #65b9fd;
+        }
+
+        /* Стилі для віджету */
+        #callback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        #callback-widget:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        #callback-button {
+            background-color: #ec86d6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #callback-button:hover {
+            background-color: #8aafd8;
+        }
+        #callback-form {
+            margin-top: 10px;
+        }
+        #phone-number {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #submit-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #submit-button:hover {
+            background-color: #218838;
+        }
+
+        /* Загальні стилі для сторінки */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            text-align: center;
+            background-color: #dba3f5;
+            color: white;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Фото з відступами справа і зліва -->
+        <img src="1.jpg" alt="Фото">
+        <!-- Навігація -->
+        <nav class="horizontal">
+            <ul>
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="prices.html">Ціни</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="reviews.html">Відгуки</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Вміст головної сторінки -->
+    </main>
+
+    <footer>
+        <p>&copy; TVK service</p>
+    </footer>
+
+    <div id="callback-widget">
+        <button id="callback-button">Залишити номер</button>
+        <div id="callback-form" style="display: none;">
+            <input type="text" id="phone-number" placeholder="Ваш номер телефону">
+            <button id="submit-button">Відправити</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('callback-button').addEventListener('click', function() {
+                var form = document.getElementById('callback-form');
+                if (form.style.display === 'none' || form.style.display === '') {
+                    form.style.display = 'block';
+                } else {
+                    form.style.display = 'none';
+                }
+            });
+
+            document.getElementById('submit-button').addEventListener('click', function() {
+                var phoneNumber = document.getElementById('phone-number').value;
+                if (phoneNumber) {
+                    // Тут ви можете додати AJAX-запит для відправки номера телефону на сервер
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/submit-phone-number', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            alert('Ваш номер телефону був успішно відправлений');
+                        }
+                    };
+                    xhr.send(JSON.stringify({ phone: phoneNumber }));
+                    
+                    document.getElementById('phone-number').value = '';
+                    document.getElementById('callback-form').style.display = 'none';
+                } else {
+                    alert('Будь ласка, введіть ваш номер телефону');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
